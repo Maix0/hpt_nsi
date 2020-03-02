@@ -9,7 +9,7 @@ function addPage(link, icon, title) {
     });
 }
 const pages = [{
-        link: "./acceuil.html",
+        link: "./accueil.html",
         icon: "home",
         title: "Accueil"
     }, {

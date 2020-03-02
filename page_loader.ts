@@ -9,7 +9,7 @@ function addPage(link: string, icon: string, title: string) {
 }
 
 const pages = [{
-    link: "./acceuil.html",
+    link: "./accueil.html",
     icon: "home",
     title: "Accueil"
 }, {
@@ -30,7 +30,7 @@ function main() {
     document.querySelectorAll(".navbar-nav .nav-item").forEach(el => {
         (el as HTMLLIElement).addEventListener("click", function (this) {
             iframe.src = this.dataset.page!;
-            document.querySelector("title")!.innerText = "HPT - " + iframe.contentWindow!.document.querySelector("title")!.innerText;
+            document.querySelector("title") !.innerText = "HPT - " + iframe.contentWindow!.document.querySelector("title") !.innerText;
         })
     })
 }

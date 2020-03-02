@@ -1,0 +1,18 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.1fr 1.2fr;
+    grid-template-areas: ". title ."". content .";
+}
+
+.title {
+    grid-area: title;
+}
+
+.content {
+    grid-area: content;
+}
+
+.main_title {
+    text-align: center;
+}
