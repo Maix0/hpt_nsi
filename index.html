@@ -15,6 +15,8 @@
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="logo">
+                <!-- le <i> permet d'afficher un logo, pour voir les logo disponible, aller sur
+                    https://material.io/resources/icons/ -->
                 <a href="#" class="nav-link"><i class="material-icons">arrow_forward_ios</i><span class="link-text">
                         Menu
                     </span>
@@ -23,12 +25,13 @@
             <!-- Les <ul> seront rejouter grace au code dans "page_loader.js" -->
         </ul>
     </nav>
+    <!-- le <main> prends la place restante, le reste de la page sera ici-->
     <main>
         <div class="grid-container">
             <!-- une <iframe> est une balise qui permet de charger une page dans une autre page
                 cela permet de ne pas avoir a recharger la page principale pour changer la page afficher 
             -->
-            <div class="iframe_container"><iframe src="./accueil.html" frameborder="0" class="page_viewer"></iframe>
+            <div class="iframe_container"><iframe src="./pages/accueil.html" frameborder="0" class="page_viewer"></iframe>
             </div>
         </div>
 
