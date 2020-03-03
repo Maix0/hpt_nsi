@@ -102,7 +102,10 @@ main {
 }
 
 /* END NAVBAR */
-main,
+
+
+
+
 html,
 body {
     height: 100%;
@@ -111,33 +114,47 @@ body {
 
 main {
     background-color: #1e1e1e;
-
+    height: 100%;
 }
 
 html,
 body {
     padding: 0;
+    margin: 0;
+    height: 100%;
 }
 
 .page_viewer {
     width: 100%;
-    height: 100%;
-}
-
-.page_viewer {
-    background-color: red;
-}
-
-.grid-container {
+    height: 98vh;
     padding: 0;
     margin: 0;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 0.1fr 3.4fr 0.1fr;
-    grid-template-rows: 0.1fr 3.4fr 0.1fr;
-    grid-template-areas: ". . ."". iframe_container ."". . .";
+    background-color: #1a1a1a;
 }
+
 
 .iframe_container {
     grid-area: iframe_container;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    height: 2vh;
+    width: 100%;
+    left: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.text {
+    width: 180px;
+    color: #aaaaaa;
 }
