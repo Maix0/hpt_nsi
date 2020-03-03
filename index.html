@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <!--    le <nav> est fixée au coté de la fentre les annimation sont entierement gener en css 
+            seul les interaction qui change la page sont faite en javascript
+    -->
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="logo">
@@ -17,15 +20,20 @@
                     </span>
                 </a>
             </li>
+            <!-- Les <ul> seront rejouter grace au code dans "page_loader.js" -->
         </ul>
     </nav>
     <main>
         <div class="grid-container">
+            <!-- une <iframe> est une balise qui permet de charger une page dans une autre page
+                cela permet de ne pas avoir a recharger la page principale pour changer la page afficher 
+            -->
             <div class="iframe_container"><iframe src="./accueil.html" frameborder="0" class="page_viewer"></iframe>
             </div>
         </div>
 
     </main>
+    <!-- le script "page_loader.js" se charge de changer la page  -->
     <script src="/page_loader.js" defer></script>
 </body>
 
