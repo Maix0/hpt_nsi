@@ -9,8 +9,8 @@ const pages = [{
         title: "Accueil"
     }, {
         link: "./pages/apps.html",
-        icon: "apps",
-        title: "Apps"
+        icon: "build",
+        title: "Tuto"
     }];
 const iframe = document.querySelector(".page_viewer");
 function main() {
