@@ -16,7 +16,7 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 0.2fr 2fr 0.2fr;
+    grid-template-columns: 0.1fr 2fr 0.1fr;
     grid-template-rows: 0.1fr 2.1fr;
     grid-template-areas: ". . ."". main_article .";
 }

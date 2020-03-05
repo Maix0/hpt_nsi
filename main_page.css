@@ -17,8 +17,9 @@ body {
 }
 
 main {
+    margin: 0;
     margin-left: 5rem;
-    padding: 1rem;
+    padding: 0;
 }
 
 .navbar {
@@ -152,6 +153,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-size: 100%;
 }
 
 .text {
