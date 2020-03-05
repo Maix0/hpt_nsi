@@ -14,8 +14,12 @@ const pages = [{
     title: "Accueil"
 }, {
     link: "./pages/apps.html",
-    icon: "apps",
+    icon: "build",
     title: "Apps"
+}, {
+    link: "./pages/gallery.html",
+    icon: "photo_library",
+    title: "Gallery"
 }];
 // Une referance a la balise <iframe> qui a une classe "page_viewer"
 const iframe = document.querySelector(".page_viewer") as HTMLIFrameElement;
