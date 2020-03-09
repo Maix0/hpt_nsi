@@ -17,7 +17,7 @@ const pages = [{
         title: "Gallery"
     }];
 const iframe = document.querySelector(".page_viewer");
-function main() {
+function init() {
     pages.forEach(({ link, icon, title }) => {
         addPage(link, icon, title);
     });
@@ -30,4 +30,4 @@ function main() {
         });
     });
 }
-main();
+init();

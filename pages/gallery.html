@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./assets/gallery.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <title>Gallery</title>
 </head>
+
 <body>
     <div class="img_viewer">
-        <a href="#" class="back" image_back()">
-        <i class="material-icons">
-            arrow_back_ios
-        </i></a>
+        <a href="#" class="back" onclick="image_before()">
+            <i class="material-icons">
+                arrow_back_ios
+            </i></a>
+        <a href="#" class="next" onclick="image_next()">
+            <i class="material-icons">
+                arrow_forward_ios
+            </i></a>
         <img src="./" alt="" class="viewer">
-        <a href="#" class="next" image_next()">
-        <i class="material-icons">
-            arrow_forward_ios
-        </i></a>
+
     </div>
     <script src="./assets/gallery.js" defer></script>
 </body>
+
 </html>

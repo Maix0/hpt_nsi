@@ -2,31 +2,46 @@ body {
     color: white;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .viewer {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img_viewer {
-    min-width: 300px;
-    min-height: 300px;
-    width: 300px;
-    height: 300px;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: 100%;
 }
 
 .back {
-    position:relative;
-    top:50%;
-    left:5%;
-}
-.next {
-    position:relative;
-    top:50%;
-    right:5%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
 }
 
-.back, .next {
-    width:16px;
-    height:16px;
+.next {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+
+.back,
+.next {
+    width: 30px;
+    height: 30px;
     text-decoration: none;
+    background-color: rgba(83, 83, 83, 0.712);
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    vertical-align: text-bottom;
 }

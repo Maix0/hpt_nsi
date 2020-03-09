@@ -29,7 +29,7 @@ const iframe = document.querySelector(".page_viewer") as HTMLIFrameElement;
 // Apres cela, elle va ajouter un event "onclick" sur tout les elements ajouter, 
 // qui va changer la proprité "src" de l'iframe , ce qui va changer la page affichée dans l'<iframe>
 
-function main() {
+function init() {
     // passez a travers tous les elements de la liste "Page" 
     pages.forEach(({
         link,
@@ -55,4 +55,4 @@ function main() {
 
 
 
-main()
+init()

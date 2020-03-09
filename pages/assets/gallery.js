@@ -1,6 +1,6 @@
 "use strict";
 const viewer = document.querySelector(".viewer");
-const images = ["../../images/Maison.jpg", "../../images/Maison.jpg", "../../images/Maison.jpg"];
+const images = ["Maison.jpg", "maison2.jpg"].map(s => "../../images/" + s);
 let img_index = 0;
 let img_index_max = images.length;
 function constrain_index() {
@@ -14,12 +14,11 @@ function constrain_index() {
 function image_next() {
     img_index += 1;
     constrain_index();
+    set_viewer();
 }
-function image_berfore() {
+function image_before() {
     img_index -= 1;
     constrain_index();
-}
-function main() {
     set_viewer();
 }
 function set_viewer() {
