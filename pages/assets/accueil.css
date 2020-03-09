@@ -42,6 +42,7 @@ body {
     padding: 0;
     padding-top: 5px;
     grid-area: content;
+    margin: 15px;
 }
 
 .title {

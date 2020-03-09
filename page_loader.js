@@ -10,7 +10,11 @@ const pages = [{
     }, {
         link: "./pages/apps.html",
         icon: "build",
-        title: "Tuto"
+        title: "Apps"
+    }, {
+        link: "./pages/gallery.html",
+        icon: "photo_library",
+        title: "Gallery"
     }];
 const iframe = document.querySelector(".page_viewer");
 function main() {

@@ -1,0 +1,32 @@
+body {
+    color: white;
+}
+
+.viewer {
+    width: 100%;
+    height: 100%;
+}
+
+.img_viewer {
+    min-width: 300px;
+    min-height: 300px;
+    width: 300px;
+    height: 300px;
+}
+
+.back {
+    position:relative;
+    top:50%;
+    left:5%;
+}
+.next {
+    position:relative;
+    top:50%;
+    right:5%;
+}
+
+.back, .next {
+    width:16px;
+    height:16px;
+    text-decoration: none;
+}
