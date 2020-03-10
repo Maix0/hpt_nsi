@@ -20,6 +20,10 @@ const pages = [{
     link: "./pages/gallery.html",
     icon: "photo_library",
     title: "Gallery"
+}, {
+    link: "./pages/maze.html",
+    icon: "games",
+    title: "Game"
 }];
 // Une referance a la balise <iframe> qui a une classe "page_viewer"
 const iframe = document.querySelector(".page_viewer") as HTMLIFrameElement;
@@ -45,14 +49,24 @@ function init() {
     document.querySelectorAll(".navbar-nav .nav-item").forEach(el => {
         (el as HTMLLIElement).addEventListener("click", function (this) {
             iframe.src = this.dataset.page!;
+            clearActive()
+            el.classList.add("active")
             // Fait en sorte que la fonction si dessou se lance apres 500ms, pour attendre que la page charge
             setTimeout(() => {
                 document.querySelector("title") !.innerText = "HPT - " + iframe.contentWindow!.document.querySelector("title") !.innerText;
             }, 500)
         })
-    })
+    });
+    // Emule un click sur l'element "accueil" de la navbar
+    (document.querySelector(`.navbar-nav .nav-item[data-page="${pages[0].link}"]`) as HTMLLIElement).click()
+
 }
 
+function clearActive() {
+    document.querySelectorAll(".navbar-nav .nav-item").forEach(el => {
+        (el as HTMLLIElement).classList.remove("active");
+    })
+}
 
 
 init()
