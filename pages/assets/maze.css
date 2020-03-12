@@ -1,0 +1,20 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 675px 1fr;
+    grid-template-rows: 675px 1fr;
+    grid-template-areas: "game side"". side";
+}
+
+.side {
+    grid-area: side;
+    padding: 1em;
+    color: white;
+}
+
+.game {
+    grid-area: game;
+}
+
+body {
+    background-color: #1E1E1E;
+}
