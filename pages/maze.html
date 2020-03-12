@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/maze.css">
     <title>Maze</title>
 </head>
+
 <body>
-    <canvas id="mainCavas"></canvas>
+    <div class="grid-container">
+        <div class="side">
+            <h1>Le Labyrinthe en Carton !</h1>
+            <p>
+                Aide le carré a sortir du labyrinthe en allant sur la case rouge.
+            </p>
+            <p>Pour se deplacer, utiliser les fleches directionnel</p>
+        </div>
+        <div class="game"><canvas id="mainCavas"></canvas></div>
+    </div>
     <script src="./assets/maze.js" defer></script>
 </body>
+
 </html>
