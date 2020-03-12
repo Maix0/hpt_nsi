@@ -30,7 +30,7 @@ function image_next() {
 function image_before() {
     img_index -=1;
     constrain_index()
-    set_viewer()
+    set_viewer() 
 } 
 
 function set_viewer() {

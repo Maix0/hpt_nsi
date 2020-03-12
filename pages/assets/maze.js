@@ -54,6 +54,7 @@ class Maze {
         this.bgColorStart = "#00BA03";
         this.bgColorEnd = "#B20000";
         this.wallColor = "#FFFFFF";
+        this.finished = false;
         console.log(width, height);
         this.cells = new Array(width * height);
         for (let y = 0; y < this.height; y++) {
@@ -262,19 +263,20 @@ function createMaze() {
 }
 class User {
     constructor() {
-        this.maze = currentMaze;
         this.x = 0;
         this.y = 0;
     }
     handle_movement(mouv) {
-        let cell = this.maze.getCell(this.x, this.y);
+        let cell = currentMaze.getCell(this.x, this.y);
+        // console.table([{cell, x:this.x, y:this.y}], ["cell", "x", "y"])
+        console.log(`cell.dirs[${mouv}] = `, cell.dirs[mouv]);
         if (cell.dirs[mouv]) {
             switch (mouv) {
                 case "east":
-                    this.x -= 1;
+                    this.x += 1;
                     break;
                 case "west":
-                    this.x += 1;
+                    this.x -= 1;
                     break;
                 case "north":
                     this.y -= 1;
@@ -290,19 +292,24 @@ class User {
         if (this.y < 0) {
             this.y = 0;
         }
+        if (this.x >= currentMaze.width) {
+            this.x = currentMaze.width - 1;
+        }
+        if (this.y >= currentMaze.height) {
+            this.y = currentMaze.height - 1;
+        }
         this.draw(context);
     }
     draw(ctx) {
-        this.maze.draw(ctx);
+        currentMaze.draw(ctx);
         ctx.fillStyle = "#1E1E1E";
-        ctx.fillRect(this.x * this.maze.cellSize + this.maze.cellSize * 0.4, this.y * this.maze.cellSize + this.maze.cellSize * 0.4, this.maze.cellSize * (1 - 0.4 - 0.4), this.maze.cellSize * (1 - 0.4 - 0.4));
+        ctx.fillRect(this.x * currentMaze.cellSize + currentMaze.cellSize * 0.4, this.y * currentMaze.cellSize + currentMaze.cellSize * 0.4, currentMaze.cellSize * (1 - 0.4 - 0.4), currentMaze.cellSize * (1 - 0.4 - 0.4));
     }
 }
 createMaze();
 let user = new User();
 document.onkeydown = checkKey;
 function checkKey(e) {
-    console.log(e.keycode);
     if (!user)
         return;
     e = e || window.event;
@@ -313,9 +320,9 @@ function checkKey(e) {
         user.handle_movement("south");
     }
     else if (e.keyCode == '37') {
-        user.handle_movement("east");
+        user.handle_movement("west");
     }
     else if (e.keyCode == '39') {
-        user.handle_movement("west");
+        user.handle_movement("east");
     }
 }
