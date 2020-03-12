@@ -9,11 +9,15 @@ const pages = [{
         title: "Accueil"
     }, {
         link: "./pages/apps.html",
-        icon: "apps",
+        icon: "build",
         title: "Apps"
+    }, {
+        link: "./pages/gallery.html",
+        icon: "photo_library",
+        title: "Gallery"
     }];
 const iframe = document.querySelector(".page_viewer");
-function main() {
+function init() {
     pages.forEach(({ link, icon, title }) => {
         addPage(link, icon, title);
     });
@@ -26,4 +30,4 @@ function main() {
         });
     });
 }
-main();
+init();
