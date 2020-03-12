@@ -3,7 +3,8 @@
 const viewer = document.querySelector(".viewer");
 // list d'image a afficher, dans l'ordre
 // il faut juste metres les image dans le dossier "images" et metre le nom de l'image dans la liste
-const images = ["Maison.jpg", "maison2.jpg"].map(s => "../../images/" + s);
+// Une image "image1.jpg" sera converti en "../images/image1.jpg", cela permet de noter que le nom des images
+const images = ["Maison.jpg", "maison2.jpg"].map(image => `../images/${image}`);
 // index actuel && index auquel il faut repartir a 0
 let img_index = 0;
 let img_index_max = images.length;

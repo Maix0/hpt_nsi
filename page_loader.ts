@@ -1,3 +1,8 @@
+// Le code a été écrit en TypeScript, un language qui est ensuite compilé en Javascript.
+// Il rajoute des fonctionalité comme le typage de variable/arguments et permet le support d'ancien naviateur.
+// Le code source sera surement un peut differant mais restera tres similaire. Les fichiers source en typescript sont ecris dans des 
+// fichier .ts, puis transcompiler en javascript dans des fichier avec le meme nom dans des fichier en .js
+
 // La fonction addPage permet de rajouter un lien dans la navbar a droite de l'écran
 // Cela va generer le code HTML requis avec les information donnée
 // et ensuite le rajouter a la fin du code existant dans une balise avec la classe "navbar-nav"
@@ -51,10 +56,6 @@ function init() {
             iframe.src = this.dataset.page!;
             clearActive()
             el.classList.add("active")
-            // Fait en sorte que la fonction si dessou se lance apres 500ms, pour attendre que la page charge
-            setTimeout(() => {
-                document.querySelector("title") !.innerText = "HPT - " + iframe.contentWindow!.document.querySelector("title") !.innerText;
-            }, 500)
         })
     });
     // Emule un click sur l'element "accueil" de la navbar
@@ -68,5 +69,9 @@ function clearActive() {
     })
 }
 
+// Lorsque l'iframe a fini de charger la page, change le titre de la page avec le titre du document de l'iframe
+iframe.addEventListener("load", function (e:any) {
+    document.title = "HPT - " + e.explicitOriginalTarget.contentDocument.title
+})
 
 init()

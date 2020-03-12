@@ -1,5 +1,22 @@
 "use strict";
 // Code disponible sur http://github.com/maix0/mazegenerator
+// L'algorithm utilisé expliqué (en anglais) ici: https://www.youtube.com/watch?v=Y37-gB83HKE
+/*
+Il y a deux class: Cell et Maze,
+La class Cell represente une seul case. Quand elle est crée, elle a des "murs" sur tout ses coté.
+Une cellule sais si elle a deja été visiter par l'algoritm.
+
+La class Maze est une liste de cellule avec des fonctions qui permettes d'interagire avec cette liste.
+Elle represente des valeurs utiliser pour affiche le labyrinte, telle que la couleur des murs, ou la couleur du fonts des cellules.
+
+Un fonction "generateMaze()" va creer un labyrinte. Pour cela, elle initialise les variable "currentStack" et "nVisitedCells"
+"currentStack" represente la case actuel et "nVisitedCells" est le compeur utiliser par l'algorithm, qui compte le nombre de case visité.
+
+Pour generer le labyrinte, l'algorithme va choisir un case de depart, aléatoirement, la metre sur le stack ("currentStack"),
+regarder pour des case voisine vide. Si il en trouve une, il crée une liaison avec, initialise la case voisine avec des les bonne
+valeur (liaison) et augmenter  le nombre de case visiter de 1 ("nVisitedCells"). L'agloritme va repeter ces actions avec la nouvelle cellules. Si aucune case voisine n'est vide, l'algorithm va retirer une valeur du stack (il va revenir en arriere) et va regarder pour des case vide. il va faire tant qu'il ne trouve aucune case vide.
+Ceci s'arrete losque nVisitiedCells est equal au nombre de cellules du labyrinte.
+*/
 let canvas = document.getElementById("mainCavas");
 let context = canvas.getContext('2d');
 const timeStep = 0;
@@ -27,7 +44,6 @@ class Cell {
         this.dirs[dir] = open;
     }
 }
-// Code disponible sur https://github.com/maix0/mazegenerator
 class Maze {
     constructor(width, height) {
         this.width = width;
@@ -286,6 +302,9 @@ createMaze();
 let user = new User();
 document.onkeydown = checkKey;
 function checkKey(e) {
+    console.log(e.keycode);
+    if (!user)
+        return;
     e = e || window.event;
     if (e.keyCode == '38') {
         user.handle_movement("north");
